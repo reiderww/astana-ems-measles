@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this repository, its code, or its reports, please cite it as below."
+title: "Astana EMS coverage and Kazakhstan measles immunity gap"
+type: software
+authors:
+  - family-names: "Butabaev"
+    given-names: "Damir"
+    affiliation: "Gymnasium No. 17, Astana, Kazakhstan"
+version: 0.1.0
+date-released: "2026-08-13"
+url: "https://github.com/<username>/astana-ems-measles"
+repository-code: "https://github.com/<username>/astana-ems-measles"
+license: MIT
+license-text: "CC-BY-4.0 (reports and figures under paper/ and results/, see LICENSE-text)"
+keywords:
+  - covering location problem
+  - emergency medical services
+  - facility location
+  - measles
+  - SEIR model
+  - herd immunity
+  - Kazakhstan
+  - Astana
+abstract: >
+  Two linked independent research projects. The first is a covering
+  location analysis of ambulance station placement in Astana under
+  Kazakhstan's ten minute emergency response standard, using p-median,
+  MCLP, and MEXCLP formulations. The second reconstructs regional measles
+  immunity gaps in Kazakhstan by comparing administratively reported
+  vaccination coverage against susceptibility implied by outbreak size,
+  using an SEIR model and the epidemic final size relation. See
+  PROTOCOL.md for the full research protocol.
+preferred-citation:
+  type: unpublished
+  title: "Optimal ambulance station placement in Astana: a covering location analysis under the national ten minute response standard"
+  authors:
+    - family-names: "Butabaev"
+      given-names: "Damir"
+  year: 2026
+  notes: "Working paper. Update this entry, and add a second preferred-citation entry for the measles report, once each is finished and archived on Zenodo with a DOI."
