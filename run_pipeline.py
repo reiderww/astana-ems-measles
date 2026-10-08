@@ -10,7 +10,8 @@ scripts = [
     "src/b06_susceptible_accumulation.py",
     "src/b07_regional_gap.py",
     "src/b08_vaccination_status_analysis.py",
-    "src/b09_figure2_regional_incidence.py"
+    "src/b09_figure2_regional_incidence.py",
+    "src/b10_regional_gap_map.py"
 ]
 
 print("=== ЗАПУСК ПОЛНОГО ВОСПРОИЗВОДИМОГО КОНВЕЙЕРА ===")
