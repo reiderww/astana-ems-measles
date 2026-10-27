@@ -9,10 +9,10 @@ def test_incidence_structure_and_sums():
     assert df["total_as_received"].isna().sum() == 144, "Expected 144 missing values for total_as_received"
     
     # 2. Контрольные суммы по стране
-    assert int(round(df["total_as_received"].sum())) == 103266, "total_as_received sum mismatch"
-    assert int(round(df["cases_0_14"].sum())) == 63848, "cases_0_14 sum mismatch"
-    assert int(round(df["cases_15_17"].sum())) == 2504, "cases_15_17 sum mismatch"
-    assert int(round(df["total_corrected"].sum())) == 84629, "total_corrected sum mismatch"
+    assert int(round(df["total_as_received"].sum())) == 85847, "total_as_received sum mismatch"
+    assert int(round(df["cases_0_14"].sum())) == 64696, "cases_0_14 sum mismatch"
+    assert int(round(df["cases_15_17"].sum())) == 2534, "cases_15_17 sum mismatch"
+    assert int(round(df["total_corrected"].sum())) == 85847, "total_corrected sum mismatch"
 
 def test_incidence_spot_checks():
     df = pd.read_csv("data/processed/incidence.csv")
@@ -24,12 +24,12 @@ def test_incidence_spot_checks():
     assert ast_2019["cases_0_14"] == 670
     assert ast_2019["cases_15_17"] == 14
     
-    # Январь 2024: 1605, 307, 19, после поправки 431
+    # Январь 2024: 433, 307, 19, после поправки 433
     ast_2024 = df[(df["region"] == 19) & (df["year"] == 2024) & (df["month"] == 1)].iloc[0]
-    assert ast_2024["total_as_received"] == 1605
+    assert ast_2024["total_as_received"] == 433
     assert ast_2024["cases_0_14"] == 307
     assert ast_2024["cases_15_17"] == 19
-    assert ast_2024["total_corrected"] == 431
+    assert ast_2024["total_corrected"] == 433
     
     # Акмолинская область (region_id 2), февраль 2019: 71, 39, 1
     akm_2019 = df[(df["region"] == 2) & (df["year"] == 2019) & (df["month"] == 2)].iloc[0]

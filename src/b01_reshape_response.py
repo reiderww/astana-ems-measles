@@ -5,7 +5,7 @@ import numpy as np
 # Создаем папку data/processed, если её нет
 os.makedirs("data/processed", exist_ok=True)
 
-excel_path = "data/raw/Приложение_2.xlsx"
+excel_path = "data/raw/Приложение_2_7_1.xlsx"
 
 # 1. Формирование region_map.csv
 region_mapping_data = [
@@ -159,15 +159,7 @@ df_incidence = pd.DataFrame(records_inc)
 # total_corrected для января 2024 = ячейка января - сумма (февраль-декабрь 2024)
 df_incidence["total_corrected"] = df_incidence["total_as_received"]
 
-for reg_id in df_region_map["region_id"]:
-    mask_2024_feb_dec = (df_incidence["region"] == reg_id) & (df_incidence["year"] == 2024) & (df_incidence["month"] >= 2)
-    sum_feb_dec = df_incidence.loc[mask_2024_feb_dec, "total_as_received"].sum()
-    
-    mask_jan = (df_incidence["region"] == reg_id) & (df_incidence["year"] == 2024) & (df_incidence["month"] == 1)
-    val_jan = df_incidence.loc[mask_jan, "total_as_received"].values[0]
-    
-    corrected_jan = val_jan - sum_feb_dec
-    df_incidence.loc[mask_jan, "total_corrected"] = corrected_jan
+
 
 df_incidence["cases_18_plus"] = df_incidence["total_corrected"] - df_incidence["cases_0_14"] - df_incidence["cases_15_17"]
 
